@@ -1,33 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Navigator from './Navigator';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
 } from "react-router-dom";
-import Contact from './components/Contact';
-import Products from './components/Products';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <App />
-        </Route>         
-        <Route path="/products">
-          <Products />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>               
-      </Switch>
-    </Router>    
-
+root.render(  
+  <Router>
+    <Navigator/>  
+</Router>
 );
 
 // If you want to start measuring performance in your app, pass a function

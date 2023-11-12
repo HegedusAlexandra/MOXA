@@ -1,74 +1,59 @@
 import './index.css';
 import React,{useState,useEffect} from "react";
 import Menu from './components/Menu';
-import bg_color_abs from './components/icons_images/bg_color_abs.jpg'
 import Footer from './components/Footer';
-import CustomComponent from './components/CustomComponent';
+/* import CustomComponent from './components/CustomComponent';
+import empty_frame from "./components/icons_images/empty_frame.png" */
+import cat_callcenter from "./components/icons_images/cat_callcenter.jpg" 
+import devices_screen_content from "./components/icons_images/home_background.gif"
+import { motion } from "framer-motion"
 
 export default function App() {
-  const [scrollY, setScrollY] = useState(0);
 
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setScreenWidth(window.innerWidth);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
 
+    // Clean up the event listener on component unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, []); 
 
   return (   
-    <div className="w-full h-full bg-cyan_50 flex flex-col overflow-x-hidden justify-center items-center">    
-      <Menu screen={"home"}/>  
-      <div className='w-[140%] h-auto overflow-hidden rounded-b-[50%] px-[20%] pt-[2%]'
-        style={{ top: scrollY > 0 ? '-100%' : '-2%', transition: 'top 0.2s ease-in-out' }}>
-        <img className='w-[100%] object-center' src={bg_color_abs} alt="bg_color_abs"/>        
+    <motion.main exit={{ opacity: 0 }} className="w-[100%] h-[100vh] bg-cyan-950 flex flex-col overflow-x-hidden justify-center items-start">    
+      <Menu screen={"home"}/> 
+      <img src={devices_screen_content} className={screenWidth > 1400 ? 'absolute right-10 w-[70%]' : (screenWidth > 650 && screenWidth<1400) ? 'absolute right-10 w-[100%] bottom-8' : "absolute w-full h-full object-cover"} alt="loading..."/>
+      <div className={screenWidth < 800 ? "absolute z-10 w-[100%] h-[22%] backdrop-blur-md bg-white/30 top-20" : `absolute w-[${screenWidth < 1400 ? 60 : 40}%] right-0 rounded-lg flex flex-col justify-center backdrop-blur-md bg-white/30 -translate-y-32`}>
+        <h1 className='font-montserrat text-md pl-4'>Welcome to</h1>
+        <h1 className='font-montserrat text-[7vh] pl-4'>EvoluCode</h1>
+        <h1 className='font-montserrat text-md pl-4'>web solutions</h1>
       </div>
-      <CustomComponent className={`w-[100%] h-[60%] top-[20%] px-[14%] absolute`} 
-      style={{boxShadow:"0px 0px 0px #000"}}
-      children={<>
-      {/* w-72 h-100 */}
-                <CustomComponent 
-                className={`w-[46%] h-[14%] top-[20%] left-[30%] p-[1%] bg-cyan_300 absolute`} 
-                children={<h1 className='text-3xl font-montserrat text-cyan_950 font-semibold'>MOXA web solution</h1>}
-                />
-                <CustomComponent 
-                className={`w-[62%] h-min-[50%] top-[36%] bg-teal_50 absolute`} 
-                children={<><p className='w-[65%] h-[40%] text-sm font-montserrat p-[2%]'>At MOXA, we understand that your online presence is more than just a website. It's your digital identity, your business's face to the world. That's why we're here to provide you with a trustworthy and reliable partner in web development.
-                </p><p className='w-[50%] h-[60%] text-sm font-montserrat p-[2%]'>
-                Our commitment goes beyond just creating websites; it's about turning your dreams and ideas into tangible, functional, and aesthetically pleasing digital solutions. We are dedicated to helping you achieve your online objectives with ease and precision.
-                </p></>}
-                />
-                <CustomComponent 
-                className={`w-[9.5%] h-[90%] top-[20%] right-[14%] bg-gradient-to-b from-teal_50 to-transparent absolute`} 
-                children={<><h1 className='hidden'>Professional Website Development Services</h1></>}
-                />
-                <CustomComponent 
-                className={`w-[9.5%] -bottom-[10%] left-[14%] bg-transparent absolute p-[1%]`} 
-                children={<><p className='font-montserrat text-sm'>Scroll for more v</p></>}
-                />
-                </>}
-      />
-            <div className='bg-teal_50 w-full h-[100vh]'>
-               <CustomComponent 
-                className={`w-[72%] h-min-[50%] ml-[14%] -mt-[10%] bg-teal_50`} 
-                scrollPos={200}
-                reveal={true}
-                children={<><p className='text-sm font-montserrat p-[1%]'>At MOXA, we understand that your online presence is more than just a website. It's your digital identity, your business's face to the world. That's why we're here to provide you with a trustworthy and reliable partner in web development.
-                </p><p className='text-sm font-montserrat p-[1%]'>
-                Our commitment goes beyond just creating websites; it's about turning your dreams and ideas into tangible, functional, and aesthetically pleasing digital solutions. We are dedicated to helping you achieve your online objectives with ease and precision.
-                </p><p className='text-sm font-montserrat p-[1%]'>
-                When you choose MOXA, you're not just hiring a web development company; you're enlisting a team of experienced professionals who are passionate about bringing your vision to life. We take pride in our ability to listen and understand your unique goals, ensuring that we tailor our services to meet your specific needs.
-                </p><p className='text-sm font-montserrat p-[1%]'>
-                What sets us apart is our unwavering dedication to providing you with the knowledge and attention you deserve. We know that navigating the digital landscape can be complex, but with us by your side, it becomes a seamless journey. Our experts are always ready to assist you, whether you have questions, need advice, or require technical support.
-                </p><p className='text-sm font-montserrat p-[1%]'>
-                So, let's embark on this digital adventure together. Your online success is not only achievable but well within reach. At MOXA, we're here to guide you every step of the way, delivering web development solutions that not only meet but exceed your expectations. Welcome to a new era of online excellence.</p></>}
-                />
-            </div>
-      <Footer/>
-    </div>
+      {screenWidth > 1400 && <div className=' w-[24%] h-[80%] px-[6%] pl-[2%] ml-[2%] rounded-lg flex flex-col justify-center '>
+      <><p className='text-sm font-montserrat p-[1%]'>
+            When you choose MOXA, you're not just hiring a web development company; you're enlisting a team of experienced professionals who are passionate about bringing your vision to life. We take pride in our ability to listen and understand your unique goals, ensuring that we tailor our services to meet your specific needs.
+            </p><p className='text-sm font-montserrat p-[1%]'>
+            What sets us apart is our unwavering dedication to providing you with the knowledge and attention you deserve. We know that navigating the digital landscape can be complex, but with us by your side, it becomes a seamless journey. Our experts are always ready to assist you, whether you have questions, need advice, or require technical support.
+            </p></>
+      </div> }
+        <div className={`absolute z-2 w-[${screenWidth > 1400 ? 80 : 100}%] h-[100vh] px-[20%] bg-[url("./components/icons_images/comp.png")] ${(screenWidth <1000 && screenWidth > 500) && 0} right-0 bg-cover bg-right bg-no-repeat `} style={{boxShadow:"rgba(0, 0, 0, 0.4) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 7px 13px -3px, rgba(0, 0, 0, 0.2) 2px -3px 0px inset,rgba(0, 0, 0, 0.12) 1px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px"}}>
+        </div>              
+      {/*  <div className='bg-teal-50 w-[100%] h-[100vh]'>
+            <CustomComponent 
+            className={`w-[72%] h-min-[50%] ml-[14%] -mt-[10%] bg-teal-50`} 
+            scrollPos1={150}
+            reveal={true}
+            children={<><p className='text-sm font-montserrat p-[1%]'>
+            So, let's embark on this digital adventure together. Your online success is not only achievable but well within reach. At MOXA, we're here to guide you every step of the way, delivering web development solutions that not only meet but exceed your expectations. Welcome to a new era of online excellence.</p></>}
+            />
+        </div> */}
+        <Footer/>
+    </motion.main>
   );
 }
