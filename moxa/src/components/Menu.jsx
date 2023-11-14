@@ -41,8 +41,8 @@ function Menu({screen}) {
   }, []);
 
   const edge = (str) => 
-<motion.li  whileHover={{ scale: 1.4 }}
-        transition={{ type: "spring", stiffness: 400, damping: 20 }} key={str} style={{ color:colors.cyan_50,marginLeft:"14%",textTransform:"uppercase",fontSize:24,letterSpacing:2,fontWeight:"bold"
+<motion.li  whileHover={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 400, damping: 20 }} key={str} style={{ color:colors.cyan_50,marginLeft:"14%",textTransform:"uppercase",letterSpacing:2,fontWeight:"bold"
 }}>
 <Link to={str === "home" ? "/" : `/${str}`}>{str}</Link>
 </motion.li>
@@ -62,13 +62,13 @@ function Box() {
     }
   }, [isPresent, safeToRemove]);
 
-  return <div className="fixed z-9 w-[260px] h-[100%] right-0 top-0 bg-cyan-900 flew-col pt-[10%] flex flex-col justify-between" ref={ref}>  
-        <ul className='flex flex-col w-[50%] gap-10'>
+  return <div className={`fixed z-9 w-[80%] h-[100%] right-0 top-0 bg-cyan-900 flew-col pt-[10%] flex flex-col justify-between font-montserrat`} ref={ref}>  
+        <ul className={`flex flex-col w-[50%] gap-[6vh] mt-[16vh] text-[${screenWidth < 1050 ? 3 : 2}vw]`}>
             {edge("home")}
             {edge("products")}
             {edge("contact")}
         </ul>
-        <div className='w-[10%] h-[5%] m-7'><img className='h-[100%]' src={moxa_logo} alt={"logo"}/></div> 
+        <div className='w-14 h-10 m-7'><img className='h-10 w-14' src={moxa_logo} alt={"logo"}/></div> 
   </div>;
 }
 
@@ -80,10 +80,10 @@ function Box() {
 
     return (
     <>
-    {(screen === "home" && screenWidth > 1000) ? 
+    {(screen === "home" && screenWidth > 1050) ? 
     (<header className={`flex flex-row fixed z-10 top-0 w-full h-[8%] bg-transparent px-[14%] py-[1%] font-montserrat items-center`} style={{ top: scrollY > 0 ? '-100%' : '0', transition: 'top 0.2s ease-in-out' }}>
         <div className='w-[10%] h-[100%]'><img className='h-[100%]' src={moxa_logo} alt={"logo"}/></div>        
-        <ul className='flex flex-row w-[50%] ml-[10%]'>
+        <ul className={`flex flex-row w-[50%] ml-[10%] text-[${screenWidth < 1050 ? 3 : 2}vw]`}>
             {edge("home")}
             {edge("products")}
             {edge("contact")}
