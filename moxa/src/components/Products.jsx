@@ -1,16 +1,11 @@
-import React, {useCallback,useState,useEffect,memo} from 'react'
-import Menu from "./Menu"
-import Footer from './Footer'
-import {motion} from "framer-motion";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, {useState,useEffect,memo} from 'react'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
+import Card from './Card';
+import SpringScreen from './SpringScreen';
 
 import '../styles.css';
-
-// import required modules
-import { EffectCards } from 'swiper/modules';
 
 function Products() {
 
@@ -28,71 +23,17 @@ function Products() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []); 
-
-  const quantity =  (arr) => arr.map((el,index) => <h2 key={el.toString()+"key"+index.toString()} className='text-cyan-800 text-[3.5vh] h-[6vh] w-[100%] rounded-2xl text-center'>{el}</h2>)
-  
-  const first_col =useCallback(() => <div className='flex flex-col w-[22%] h-[100%]'>
-  <div className={` w-[100%] h-[60%] bg-white/50 flex flex-col justify-start text-cyan-900 uppercase text-md font-semibold tracking-tighter rounded-t-2xl`} style={{boxShadow:"rgba(0, 0, 0, 0.12) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 4px 7px -3px, rgba(0, 0, 0, 0.08) 2px -3px 0px inset,rgba(0, 0, 0, 0.10) 1px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px"}}>   
-    <h2 className='text-[2.5vh] text-cyan-800 bg-teal-50 8 w-[100%] rounded-2xl px-2 mb-2 text-center' style={{boxShadow:"rgba(0, 0, 0, 0.12) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 4px 7px -3px, rgba(0, 0, 0, 0.08) 2px -3px 0px inset,rgba(0, 0, 0, 0.10) 1px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px"}}>STANDARD</h2> 
-    <div className='w-[100%] h-[14vh]'>     
-    {quantity([1,1,1])} 
-    </div>                 
-    <div className=' w-[60%]  h-[10vh] m-[20%] mb-[0%] bg-[url("./components/icons_images/yes.png")] bg-cover bg-center'></div>                        
-  </div>
-  <div className={`bg-red-500 opacity-50 w-[100%] h-[40%] rounded-b-xl`} ></div>
-</div>,[])
-
-const second_col = useCallback(() => <div className='flex flex-col w-[22%] h-[100%]'>
-<div className={` w-[100%] h-[70%] bg-white/50 flex flex-col justify-start text-cyan-900 uppercase text-md font-semibold tracking-tighter rounded-t-2xl`} style={{boxShadow:"rgba(0, 0, 0, 0.12) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 4px 7px -3px, rgba(0, 0, 0, 0.08) 2px -3px 0px inset,rgba(0, 0, 0, 0.10) 1px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px"}}>   
-  <h2 className='text-[2.5vh] text-cyan-800 bg-teal-50 h-8 w-[100%] rounded-2xl px-2 mb-2 text-center' style={{boxShadow:"rgba(0, 0, 0, 0.12) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 4px 7px -3px, rgba(0, 0, 0, 0.08) 2px -3px 0px inset,rgba(0, 0, 0, 0.10) 1px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px"}}>Essential</h2> 
-  <div className='w-[100%] h-[14vh]'>     
-  {quantity([2,3,3])} 
-  </div>                 
-  <div className=' w-[60%] h-[10vh] m-[20%] mb-[0%] bg-[url("./components/icons_images/yes.png")] bg-cover bg-center'></div>                        
-</div>
-<div className={`bg-red-500 opacity-50 w-[100%] h-[30%] rounded-b-xl`} ></div>
-</div>,[])
-
-const third_col= useCallback(() => <div className='flex flex-col w-[22%] h-[100%]'>
-<div className={` w-[100%] h-[80%] bg-white/50 flex flex-col justify-start text-cyan-900 uppercase text-md font-semibold tracking-tighter rounded-t-2xl`} style={{boxShadow:"rgba(0, 0, 0, 0.12) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 4px 7px -3px, rgba(0, 0, 0, 0.08) 2px -3px 0px inset,rgba(0, 0, 0, 0.10) 1px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px"}}>   
-  <h2 className='text-[2.5vh] text-cyan-800 bg-teal-50 h-8 w-[100%] rounded-2xl px-2 mb-2 text-center' style={{boxShadow:"rgba(0, 0, 0, 0.12) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 4px 7px -3px, rgba(0, 0, 0, 0.08) 2px -3px 0px inset,rgba(0, 0, 0, 0.10) 1px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px"}}>GROW</h2> 
-  <div className='w-[100%] h-[14vh]'>     
-  {quantity([4,6,5])} 
-  </div>                 
-  <div className=' w-[60%]  h-[10vh] m-[20%] mb-[0%] bg-[url("./components/icons_images/yes.png")] bg-cover bg-center'></div>                       
-</div>
-<div className={`bg-red-500 opacity-50 w-[100%] h-[20%] rounded-b-xl`} ></div>
-</div>,[])
-
-const forth_col = useCallback(() => <div className='flex flex-col w-[22%] h-[100%]'>
-<div className={`rounded-2xl w-[100%] h-[100%] bg-white/50 flex flex-col justify-start text-cyan-900 uppercase text-md font-semibold tracking-tighter`} style={{boxShadow:"rgba(0, 0, 0, 0.12) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 4px 7px -3px, rgba(0, 0, 0, 0.08) 2px -3px 0px inset,rgba(0, 0, 0, 0.10) 1px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px"}}>   
-  <h2 className='text-[2.5vh] text-cyan-800 bg-teal-50 8 w-[100%] rounded-2xl px-2 mb-2 text-center' style={{boxShadow:"rgba(0, 0, 0, 0.12) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 4px 7px -3px, rgba(0, 0, 0, 0.08) 2px -3px 0px inset,rgba(0, 0, 0, 0.10) 1px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px"}}>PREMIUM</h2> 
-  <div className='w-[100%] h-[14vh]'>     
-  {quantity([8,"+","+"])} 
-  </div>                 
-  <div className=' w-[60%]  h-[10vh] m-[20%] mb-[0%] bg-[url("./components/icons_images/yes.png")] bg-cover bg-center'></div>                       
-</div>
-<div className={`bg-red-500 opacity-50 w-[100%] h-[0%] rounded-b-xl`} ></div>
-</div>,[])
-
-const offer_col = useCallback(() => <div className={ ` rounded-2xl w-[${screenWidth < 500 ? 100 : screenWidth > 1600 ? 300 : 200}px] p-2 h-[100%] text-[2vh] pt-10 font-semibold flex flex-col justify-between bg-white/50 text-cyan-900 uppercase`} style={{boxShadow:"rgba(0, 0, 0, 0.12) 2px 2px 4px, rgba(0, 0, 0, 0.3) 2px 4px 7px -3px, rgba(0, 0, 0, 0.08) 2px -3px 0px inset,rgba(0, 0, 0, 0.10) 1px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px"}}>
-<h2>X changes per year</h2> 
-<h2>Drafts</h2> 
-<h2>Pages</h2>
-<h2>Domain name</h2>  
-<h2>Email address</h2>  
-<h2>Speed optimised</h2>  
-<h2>Responsive</h2>  
-<h2>Multilanguage</h2>  
-<h2>SEO</h2>  
-<h2>Analytics</h2>  
-<h2>Booking options / Webshop</h2>  
-<h2>Admin site</h2>
-</div>,[])
+  }, []);    
 
   return (
-    <motion.main exit={{ opacity: 0 }} className='w-[100%] h-[200vh] bg-blue-200'>    
+    <div className='flex flex-row justify-center'>
+           <SpringScreen 
+            screenHeight_1={10}
+            screenHeight_2={80}
+            screenColor_2={"bg-sky-600"}
+            screenColor_1={"bg-lime-300"}/>
+          <Card title="Card Title" content="This is the card content." />
+    {/* <motion.main exit={{ opacity: 0 }} className='w-[100%] h-[200vh] bg-blue-200'>    
       <Menu screen={"products"}/>
       <div className='absolute w-[100%] h-[1vh] bg-cyan-950'></div>
       <div className='w-[100%] h-[100vh] bg-blue-200 bg-[url("./components/icons_images/laptop_color.jpg")] bg-cover bg-center'>        
@@ -162,7 +103,8 @@ const offer_col = useCallback(() => <div className={ ` rounded-2xl w-[${screenWi
           </div>
       </div>                         
       <Footer/>
-    </motion.main>
+    </motion.main> */}
+    </div>
   )
 }
 

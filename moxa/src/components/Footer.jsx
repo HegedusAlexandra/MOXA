@@ -24,7 +24,7 @@ const [isSitemapEnabled,setIsSitemapEnabled] = useState(false)
   return (
   <footer>
     <div className='w-full h-[8%] bg-cyan-900 opacity-20'></div>
-      <div className='flex flex-row fixed bottom-0 left-0 w-full h-[8%] bg-transparent px-[14%] py-[1%] font-montserrat items-center' >
+      <div className='flex flex-row w-full h-[8%] bg-transparent px-[14%] py-[1%] font-montserrat items-center' >
           <div className='w-[10%] h-[100%]'>
               <img className='h-[100%]' src={moxa_logo} alt={"logo"}/>
           </div>        
