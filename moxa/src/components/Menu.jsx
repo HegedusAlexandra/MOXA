@@ -1,7 +1,7 @@
 import React, { useState ,memo,useEffect, useRef} from 'react'
 import {Link} from 'react-router-dom'
 import colors from '../colors'
-import moxa_logo from './icons_images/ec_logo.png'
+import moxa_logo from '../assets/icons_images/ec_logo.png'
 import { AnimatePresence, motion, usePresence } from "framer-motion";
 import { gsap } from "gsap";
 

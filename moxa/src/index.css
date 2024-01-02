@@ -56,3 +56,291 @@ select {
   appearance: none !important;
   border-radius: 0;
 }
+
+  
+.swiper {
+  width: 240px;
+  height:500px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide:nth-child(1n) {
+  background-color: rgb(240,249,255);
+}
+
+.swiper-slide:nth-child(2n) {
+  background-color: rgb(186,230,253);
+}
+
+.swiper-slide:nth-child(3n) {
+  background-color: rgb(56,189,248);
+}
+
+.swiper-slide:nth-child(4n) {
+  background-color: rgb(2,132,199);
+}
+
+.circular-menu {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 1000;
+}
+.circular-menu-2 {
+  position: absolute;
+  width: 15em ;
+  height: 15em;
+  border: #fff solid 1px;
+  border-radius: 50%;
+  transform: translate(-40%,-40%);
+}
+.circular-menu-3 {
+  position: absolute;
+  width: 14.5em ;
+  height: 14.5em;
+  border: #fff solid 1px;
+  border-radius: 50%;
+  transform: translate(-40%,-40%);
+}
+.circular-menu-4 {
+  position: absolute;
+  width: 23.5em ;
+  height: 23.5em;
+  border: #fff solid 1px;
+  border-radius: 50%;
+  transform: translate(-40%,-40%);
+}
+
+.circular-menu .main-btn {
+  display: block;
+  width:13em;
+  height: 13em;
+  border-radius: 50%;
+  background-color: #f7fee7;
+  box-shadow: 4px 4px 6px 0 hsla(0, 0%, 0%, .5);  
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  line-height: 3.9;
+  cursor: pointer;
+  outline: 0;
+  transform: translate(-40%,-40%);
+}
+
+.circular-menu.visible .main-btn {
+  box-shadow: inset -4px -4px 8px hsla(0, 0%, 0%, .4);
+}
+
+.circular-menu .main-btn i {
+  font-size: 1.3em;
+  transition: transform .2s;  
+}
+
+.circular-menu.visible .main-btn i {
+  transform: rotate(-90deg);
+}
+
+.circular-menu:after {
+  display: block;
+  content: '';
+  width: 4.2em;
+  height: 4.2em;
+  border-radius: 50%;
+  position: absolute;
+  top: .0em;
+  left: .0em;
+  z-index: -2;
+  background-color: hsla(0%, 0%, 0%, .5);
+  transition: all .3s ease;
+  backdrop-filter: blur(1px);
+}
+
+.circular-menu.visible:after {
+  transform: scale3d(5.5, 5.5, 1);
+  transition-timing-function: cubic-bezier(.68, 1.55, .265, 1);
+  box-shadow: 2px 2px 3px 0 hsla(0, 0%, 0%, .5);  
+}
+
+.circular-menu .items-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.circular-menu .menu-item {
+  position: absolute;
+  top: .0em;
+  left: .0em;
+  z-index: 2;
+  display: block;
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  font-size: 1em;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  border: 1px solid hsl(0, 100%, 100%);
+  text-align: center;
+  line-height: 3;
+  opacity:0;
+  background-color: #0284C7;
+  transition: transform .3s ease, background .2s ease;
+}  
+.circular-menu .menu-item:hover {
+  background-color: #0369a1;
+}  
+.circular-menu.visible .menu-item {
+  opacity:1;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}  
+.menu-item.active {
+  background-color:black !important;
+}
+.circular-menu.visible .menu-item:nth-child(1) {
+  transform:rotate(15deg) translate(12em) rotate(-15deg);    
+}
+.circular-menu.visible .menu-item:nth-child(2) {
+  transform: rotate(45deg) translate(12em) rotate(-45deg);
+}
+.circular-menu.visible .menu-item:nth-child(3) {
+  transform: rotate(75deg) translate(12em) rotate(-75deg);
+}
+
+/*  .circular-menu.visible .menu-item:nth-child(4) {
+  transform: rotate(90deg) translate(8em) rotate(-90deg);
+}  
+.circular-menu.visible .menu-item:nth-child(5) {
+  transform: translate(4.5em);
+}
+.circular-menu.visible .menu-item:nth-child(6) {
+  transform:  rotate(45deg) translate(4.5em) rotate(-45deg);
+}
+.circular-menu.visible .menu-item:nth-child(7) {
+  transform:  rotate(90deg) translate(4.5em) rotate(-90deg);
+} */
+
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+}
+
+.multiline-ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  margin-top: 8px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 90%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #11998e;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::-moz-placeholder {
+  color: transparent;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:-moz-placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__field_long {
+  font-family: inherit;
+  width: 194%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #11998e;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field_long::-moz-placeholder {
+  color: transparent;
+}
+.form__field_long::placeholder {
+  color: transparent;
+}
+.form__field_long:-moz-placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+.form__field_long:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus, .form__field_long:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, #11998e, #38ef7d);
+     border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label, .form__field_long:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field .form__field_long:required, .form__field .form__field_long:invalid {
+  box-shadow: none;
+}

@@ -1,44 +1,19 @@
-import './index.css';
-import React,{useState,useEffect} from "react";
-import Menu from './components/Menu';
-import Footer from './components/Footer';
+import '../index.css';
+import React,{memo} from "react";
+import Menu from '../components/Menu';
+import Footer from '../components/Footer';
 import { motion } from "framer-motion"
-import CircularMenu from './components/CircularMenu';
+import CircularMenu from '../components/CircularMenu';
 import { useLottie } from "lottie-react";
-import compAnim from "./components/compAnim.json";
-import SpringScreen from './components/SpringScreen';
-import Card from './components/Card';
+import compAnim from "../assets/compAnim.json";
+import SpringScreen from '../components/SpringScreen';
+import Card from '../components/Card';
+import { useScrollPosition, useScreenWidth } from '../hooks/position'
 
-export default function App() {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [scrollY, setScrollY] = useState(0);
-
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Attach the event listener for window resize
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []); 
-
+function Main() {
+  const scrollY = useScrollPosition();
+  const screenWidth = useScreenWidth();
+  
   const options = {
     animationData: compAnim,
     loop: true
@@ -86,10 +61,21 @@ export default function App() {
             content="Our experienced developers stand poised to craft any variety of mobile software you require, with expertise spanning native, hybrid, and cross-platform applications. Rest assured, we are committed to delivering solutions that precisely meet your mobile software needs." />
             <Card title="Upgrading your already existing project" content="Our skilled team is adept at revitalizing and enhancing your existing projects, infusing them with new vigor and advanced features. We are dedicated to elevating your current undertakings to new heights of innovation and efficiency." />
           </div>
-          
+          <SpringScreen 
+          pictureUrl={'bg-hand-pattern'}
+          screenHeight_1={20}
+          screenHeight_2={70}
+          screenColor_2={"bg-lime-300"}
+          screenColor_1={"bg-sky-700"}>
+          <h1 className='font-afacad text-[6vw] font-bold text-start px-[2vw] pt-[4vw]'>
+          "Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!"
+          </h1>
+      </SpringScreen>
       </SpringScreen> 
       {scrollY <= 0 && <button className='absolute z-3 bottom-[8vh] left-[45%] w-[10vw] h-[6vh] mt-4 rounded-xl bg-lime-300 shadow-[0_6px_1px_2px_rgba(0,0,0,1)] font-afacad'>Want more?</button>}
       <Footer/>
     </motion.main>
   );
 }
+
+export default memo(Main)

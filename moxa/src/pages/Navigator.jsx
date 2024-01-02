@@ -1,15 +1,13 @@
 import React from 'react'
-import App from './App';
+import Main from './Main';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   useLocation,
 } from "react-router-dom";
-import Contact from './components/Contact';
-import Products from './components/Products';
+import Contact from './Contact';
+import Products from './Products';
 import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion"
 import { Helmet } from 'react-helmet';
 
 
@@ -34,7 +32,7 @@ export default function Navigator() {
       </Helmet>
         <Switch  location={location} key={location.pathname} >
           <Route path="/" exact>
-            <App />
+            <Main />
           </Route>         
           <Route path="/products">
             <Products />

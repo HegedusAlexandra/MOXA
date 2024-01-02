@@ -1,6 +1,6 @@
 import React, { useState ,useEffect} from 'react'
 import colors from '../colors'
-import moxa_logo from './icons_images/ec_logo.png'
+import moxa_logo from '../assets/icons_images/ec_logo.png'
 import {Link} from "react-router-dom"
 
 export default function Footer() {

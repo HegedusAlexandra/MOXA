@@ -2,8 +2,7 @@ import React,{useCallback} from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import '../input.css';
-import { AnimatePresence, motion, usePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import colors from '../colors'
 
 const Form = () => {

@@ -2,10 +2,8 @@ import React, {useState,useEffect,memo} from 'react'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-import Card from './Card';
-import SpringScreen from './SpringScreen';
-
-import '../styles.css';
+import Card from '../components/Card';
+import SpringScreen from '../components/SpringScreen';
 
 function Products() {
 
@@ -36,7 +34,7 @@ function Products() {
     {/* <motion.main exit={{ opacity: 0 }} className='w-[100%] h-[200vh] bg-blue-200'>    
       <Menu screen={"products"}/>
       <div className='absolute w-[100%] h-[1vh] bg-cyan-950'></div>
-      <div className='w-[100%] h-[100vh] bg-blue-200 bg-[url("./components/icons_images/laptop_color.jpg")] bg-cover bg-center'>        
+      <div className='w-[100%] h-[100vh] bg-blue-200 bg-[url("./assets/icons_images/laptop_color.jpg")] bg-cover bg-center'>        
         <motion.h1 className={`w-[80%] pt-[1vh] pl-[1vh] font-montserrat text-cyan-950 text-[5vh] font-semibold`}  whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}>PROFESSIONAL WEBSITES</motion.h1>{screenWidth > 500 && 
         <div className={` rounded-2xl w-[${(screenWidth < 800) ? 90 : (screenWidth < 1000) ? 80 : (screenWidth < 1100) ? 58 : 50}%] h-[58%] flex flex-row backdrop-blur-lg bg-white/10 justify-between`} style={{transform:screenWidth < 800  ? "translate(6%,14%)" : screenWidth < 1000  ? "translate(12%,14%)" : screenWidth < 1100  ?"translate(36%,14%)" : "translate(50%,14%)"}}>
@@ -64,7 +62,7 @@ function Products() {
           </Swiper></div>}
       </div>
       <div className='absolute w-[100%] h-[1vh] bg-cyan-950'></div> 
-      <div className='w-[100%] h-[100vh] p-[2vh] bg-blue-200 bg-[url("./components/icons_images/mobile_color.jpg")] bg-cover bg-center flex flex-row'>
+      <div className='w-[100%] h-[100vh] p-[2vh] bg-blue-200 bg-[url("./assets/icons_images/mobile_color.jpg")] bg-cover bg-center flex flex-row'>
         <motion.h1 className='w-[20%] ml-[1vh] font-montserrat text-cyan-950 text-6xl font-semibold'  whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}>AWESOME MOBILE APPS</motion.h1>
         <div className={` rounded-2xl ml-[2%] mt-[8%] w-[80%] h-[74%] flex flex-row justify-start`} >
@@ -85,7 +83,7 @@ function Products() {
                 <div className='w-[100%] h-[16vh]'>     
                 {quantity([8,"+","+"])} 
                 </div>                 
-                <div className='w-[60%] h-[8vh] m-[20%] mb-[0%] bg-[url("./components/icons_images/yes.png")] bg-cover bg-center'></div>                       
+                <div className='w-[60%] h-[8vh] m-[20%] mb-[0%] bg-[url("./assets/icons_images/yes.png")] bg-cover bg-center'></div>                       
               </div>
               <div className={`bg-red-500 opacity-50 w-[100%] h-[40%] rounded-b-xl`} ></div>
             </div>                              
@@ -95,7 +93,7 @@ function Products() {
                 <div className='w-[100%] h-[16vh]'>     
                 {quantity([8,"+","+"])} 
                 </div>                 
-                <div className=' w-[60%] h-[8vh] m-[20%] mb-[0%] bg-[url("./components/icons_images/yes.png")] bg-cover bg-center'></div>                       
+                <div className=' w-[60%] h-[8vh] m-[20%] mb-[0%] bg-[url("./assets/icons_images/yes.png")] bg-cover bg-center'></div>                       
               </div>
               <div className={`bg-red-500 opacity-50 w-[100%] h-[0%] rounded-b-xl`} ></div>
             </div>                                               
