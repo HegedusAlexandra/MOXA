@@ -38,18 +38,18 @@ function Main() {
       <SpringScreen 
         screenHeight_1={10}
         screenHeight_2={70}
-        screenColor_2={"bg-amber-300"}
+        screenColor_2={"bg-amber-50"}
         screenColor_1={"bg-sky-700"}>
-          <h1 className='font-afacad text-[4vw] font-bold text-start px-[2vw] pt-[4vw]'>
-          "Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!"
+          <h1 className='font-afacad text-[4vw] font-bold text-start px-[14vw] pt-[4vw]'>
+          Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!
           </h1>
       </SpringScreen>
       <SpringScreen 
         screenHeight_1={10}
         screenHeight_2={90}
         screenColor_2={"bg-sky-700"}
-        screenColor_1={"bg-amber-300"}>
-          <div className='flex flex-row justify-center pt-[20vh] pb-[20vh] gap-[4vw]'>
+        screenColor_1={"bg-amber-50"}>
+          <div className='flex flex-row justify-center pt-[20vh] pb-[20vh] gap-[2vw] px-[14vw]'>
             <Card 
             title="Web development"
             title_2="Innovative and Comprehensive Solutions"  
@@ -66,13 +66,13 @@ function Main() {
           pictureUrl={"hand"}
           screenHeight_1={40}
           screenHeight_2={70}
-          screenColor_2={"bg-amber-300"}
+          screenColor_2={"bg-amber-100"}
           screenColor_1={"bg-sky-700"}>
-          <h1 className='font-afacad text-[6vw] font-bold text-start px-[2vw] pt-[4vw]'>
+          <h1 className='font-afacad height-[100vh] text-[2vw] font-bold text-start px-[14vw] py-[14vw]'>
           "Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!"
           </h1>      
           </SpringScreen> 
-      {scrollY <= 0 && <button className='absolute z-3 bottom-[8vh] left-[45%] w-[10vw] h-[6vh] mt-4 rounded-xl bg-amber-300 shadow-[0_6px_1px_2px_rgba(0,0,0,1)] font-afacad'>Want more?</button>}
+      {scrollY <= 0 && <button className='absolute z-3 bottom-[8vh] left-[45%] w-[10vw] h-[6vh] mt-4 rounded-xl bg-amber-50 shadow-[0_6px_1px_2px_rgba(0,0,0,1)] font-afacad text-[1.5vw]'>Want more?</button>}
       <Footer/>
     </motion.main>
   );

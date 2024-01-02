@@ -121,11 +121,13 @@ select {
 }
 
 .circular-menu .main-btn {
+  position: absolute;
+  z-index: 1002;
   display: block;
-  width:13em;
-  height: 13em;
+  width:15em;
+  height: 15em;
   border-radius: 50%;
-  background-color: #f7fee7;
+  background-color: #fffbeb;
   box-shadow: 4px 4px 6px 0 hsla(0, 0%, 0%, .5);  
   color: hsl(0, 0%, 100%);
   text-align: center;
@@ -151,8 +153,8 @@ select {
 .circular-menu:after {
   display: block;
   content: '';
-  width: 4.2em;
-  height: 4.2em;
+  width: 4.3em;
+  height: 4.3em;
   border-radius: 50%;
   position: absolute;
   top: .0em;
