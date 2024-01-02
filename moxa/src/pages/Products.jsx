@@ -2,35 +2,16 @@ import React, {useState,useEffect,memo} from 'react'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-import Card from '../components/Card';
-import SpringScreen from '../components/SpringScreen';
+
+import CircularMenu from '../components/CircularMenu';
+import EmptyPage from '../components/EmptyPage'
 
 function Products() {
 
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  const handleResize = () => {
-    setScreenWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);    
-
   return (
-    <div className='flex flex-row justify-center'>
-           <SpringScreen 
-            screenHeight_1={10}
-            screenHeight_2={80}
-            screenColor_2={"bg-sky-600"}
-            screenColor_1={"bg-lime-300"}/>
-          <Card title="Card Title" content="This is the card content." />
+    <div className='w-[100vw] h-[100vh]'>
+      <CircularMenu/>
+      <EmptyPage/>
     {/* <motion.main exit={{ opacity: 0 }} className='w-[100%] h-[200vh] bg-blue-200'>    
       <Menu screen={"products"}/>
       <div className='absolute w-[100%] h-[1vh] bg-cyan-950'></div>

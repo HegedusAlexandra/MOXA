@@ -49,7 +49,7 @@ function Main() {
         screenHeight_2={90}
         screenColor_2={"bg-sky-700"}
         screenColor_1={"bg-lime-300"}>
-          <div className='flex flex-row justify-center pt-[20vh] pb-[12vh] gap-[4vw]'>
+          <div className='flex flex-row justify-center pt-[20vh] pb-[20vh] gap-[4vw]'>
             <Card 
             title="Web development"
             title_2="Innovative and Comprehensive Solutions"  
@@ -61,17 +61,17 @@ function Main() {
             content="Our experienced developers stand poised to craft any variety of mobile software you require, with expertise spanning native, hybrid, and cross-platform applications. Rest assured, we are committed to delivering solutions that precisely meet your mobile software needs." />
             <Card title="Upgrading your already existing project" content="Our skilled team is adept at revitalizing and enhancing your existing projects, infusing them with new vigor and advanced features. We are dedicated to elevating your current undertakings to new heights of innovation and efficiency." />
           </div>
+          </SpringScreen>
           <SpringScreen 
           pictureUrl={'bg-hand-pattern'}
-          screenHeight_1={20}
+          screenHeight_1={40}
           screenHeight_2={70}
           screenColor_2={"bg-lime-300"}
           screenColor_1={"bg-sky-700"}>
           <h1 className='font-afacad text-[6vw] font-bold text-start px-[2vw] pt-[4vw]'>
           "Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!"
-          </h1>
-      </SpringScreen>
-      </SpringScreen> 
+          </h1>      
+          </SpringScreen> 
       {scrollY <= 0 && <button className='absolute z-3 bottom-[8vh] left-[45%] w-[10vw] h-[6vh] mt-4 rounded-xl bg-lime-300 shadow-[0_6px_1px_2px_rgba(0,0,0,1)] font-afacad'>Want more?</button>}
       <Footer/>
     </motion.main>

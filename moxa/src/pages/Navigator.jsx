@@ -9,6 +9,7 @@ import Contact from './Contact';
 import Products from './Products';
 import { AnimatePresence } from "framer-motion";
 import { Helmet } from 'react-helmet';
+import Blog from './Blog';
 
 
 export default function Navigator() {
@@ -39,6 +40,9 @@ export default function Navigator() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>               
+          <Route path="/blog">
+            <Blog />
           </Route>               
         </Switch>
       </AnimatePresence>

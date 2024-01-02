@@ -9,6 +9,7 @@ module.exports = {
       },
       backgroundImage: {
         'hand-pattern': "url('./assets/icons_images/mobile_color.jpg')",
+        'desert': "url('./assets/icons_images/desert.png')",
       }
     },
   },

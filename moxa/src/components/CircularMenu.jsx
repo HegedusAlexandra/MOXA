@@ -32,16 +32,16 @@ const [isVisible,setIsVisible] = useState(false)
         </button>
         <menu className="items-wrapper">
         <Link to="/" className="menu-item">
-          H
-          <p className='text-[1.5vh] -translate-y-6'>HOME</p>
+         <p className='text-xs'>HOME</p>
         </Link>
         <Link to="/products" className="menu-item">
-          P
-          <p className='text-[1.5vh] -translate-y-6'>PRODUCTS</p>
+        <p className='text-xs'>PRODUCTS</p>
         </Link>
         <Link to="/contact" className="menu-item">
-          C
-          <p className='text-[1.5vh] -translate-y-6'>CONTACT</p>
+        <p className='text-xs'>CONTACT</p>
+        </Link>
+        <Link to="/blog" className="menu-item">
+        <p className='text-xs'>BLOG</p>
         </Link>
       </menu>
    
