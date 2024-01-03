@@ -73,19 +73,41 @@ function Main() {
               <h1 className='font-afacad w-[100%] h-[20%] text-[2vw] font-bold text-start px-[14vw] py-[4vw] text-highlight'>
               Initial Consultation and Development Strategy:
               </h1> 
-              <div className='flex flex-row w-[100%] h-[80%]'>
-                <div className='w-[10%] h-[100%]'></div>
-                <div className='flex justify-center w-[20%] h-[100%]'>
-                  <div className='w-[2%] h-[80%] my-[5vh] bg-background_light rounded-full'/>
-                  <div className='h-[92%] flex flex-col justify-between'>
-                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>                       
-                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>
-                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>
-                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>
-                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>
-                  </div>                       
-                </div>
-                <div className='w-[70%] h-[100%]'></div>             
+              <div className='flex flex-row w-[100%] h-[80%]'>               
+                  <div className='w-[1vh] h-[80%] ml-[20vh] bg-background_light rounded-full'/>
+                  <div className='h-[92%] flex flex-col justify-between -translate-y-[5.4vh]'>
+                    <div className='h-[10vh] flex flex-row justify-between'>
+                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
+                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
+                      </div> 
+                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
+                    </div>                       
+                    <div className='h-[10vh] flex flex-row justify-between'>
+                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
+                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
+                      </div> 
+                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
+                    </div>                       
+                    <div className='h-[10vh] flex flex-row justify-between'>
+                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
+                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
+                      </div> 
+                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
+                    </div>                       
+                    <div className='h-[10vh] flex flex-row justify-between'>
+                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
+                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
+                      </div> 
+                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
+                    </div>                       
+                    <div className='h-[10vh] flex flex-row justify-between'>
+                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
+                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
+                      </div> 
+                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
+                    </div>                       
+                    
+                  </div>        
               </div>
             </div>     
           </SpringScreen> 

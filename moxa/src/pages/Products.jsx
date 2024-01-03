@@ -64,7 +64,7 @@ function Products() {
                 <div className='w-[100%] h-[16vh]'>     
                 {quantity([8,"+","+"])} 
                 </div>                 
-                <div className='w-[60%] h-[8vh] m-[20%] mb-[0%] bg-[url("./assets/icons_images/yes.png")] bg-cover bg-center'></div>                       
+                <div className='w-[60%] h-[8vh] m-[20%] mb-[0%] bg-cover bg-center'></div>                       
               </div>
               <div className={`bg-red-500 opacity-50 w-[100%] h-[40%] rounded-b-xl`} ></div>
             </div>                              
@@ -74,7 +74,7 @@ function Products() {
                 <div className='w-[100%] h-[16vh]'>     
                 {quantity([8,"+","+"])} 
                 </div>                 
-                <div className=' w-[60%] h-[8vh] m-[20%] mb-[0%] bg-[url("./assets/icons_images/yes.png")] bg-cover bg-center'></div>                       
+                <div className=' w-[60%] h-[8vh] m-[20%] mb-[0%]'></div>                       
               </div>
               <div className={`bg-red-500 opacity-50 w-[100%] h-[0%] rounded-b-xl`} ></div>
             </div>                                               
