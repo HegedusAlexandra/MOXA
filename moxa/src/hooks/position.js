@@ -36,7 +36,7 @@ export const useScreenWidth = () => {
   return screenWidth;
 };
 
-
+// useIsPresent also useInView from framer motion also return if elemnt is present
 export const useOnScreen = (options) => {
   const ref = useRef(null);
   const [isIntersecting, setIntersecting] = useState(false);

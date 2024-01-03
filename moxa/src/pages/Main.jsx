@@ -66,15 +66,32 @@ function Main() {
           <SpringScreen 
           pictureUrl={"hand"}
           screenHeight_1={40}
-          screenHeight_2={70}
-          screenColor_2={"bg-amber-100"}
-          screenColor_1={"bg-secondary"}>
-          <h1 className='font-afacad height-[100vh] text-[2vw] font-bold text-start px-[14vw] py-[14vw]'>
-          "Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!"
-          </h1>      
+          screenHeight_2={100}
+          screenColor_2={"bg-headline"}
+          screenColor_1={"bg-headline"}>
+            <div className='flex flex-col justify-center items-center w-[100%] h-[100%]'>
+              <h1 className='font-afacad w-[100%] h-[20%] text-[2vw] font-bold text-start px-[14vw] py-[4vw] text-highlight'>
+              Initial Consultation and Development Strategy:
+              </h1> 
+              <div className='flex flex-row w-[100%] h-[80%]'>
+                <div className='w-[10%] h-[100%]'></div>
+                <div className='flex justify-center w-[20%] h-[100%]'>
+                  <div className='w-[2%] h-[80%] my-[5vh] bg-background_light rounded-full'/>
+                  <div className='h-[92%] flex flex-col justify-between'>
+                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>                       
+                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>
+                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>
+                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>
+                  <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'><div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/></div>
+                  </div>                       
+                </div>
+                <div className='w-[70%] h-[100%]'></div>             
+              </div>
+            </div>     
           </SpringScreen> 
-          <div className='w-[100%] h-[10%] px-[14%] bg-background_light'>      
-      <Footer/></div>
+          <div className='w-[100%] h-[30%] px-[14%] bg-background_light'>      
+            <Footer/>
+          </div>
     </motion.main>
   );
 }
