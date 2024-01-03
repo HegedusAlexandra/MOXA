@@ -22,14 +22,15 @@ function Main() {
   const { View } = useLottie(options);
 
   return (   
-    <motion.main exit={{ opacity: 0 }} className="w-[100%] bg-sky-700 flex flex-col items-start ">    
+    <motion.main exit={{ opacity: 0 }} className="w-[100%] bg-secondary flex flex-col items-start ">    
       {(scrollY <= 0 && screenWidth > 720) ? <Menu screen={"home"}/> : <CircularMenu screen={"home"}/>}
-      <motion.div className='flex flex-row justify-end items-end w-[100%] h-[80vh] px-[14%] pb-[10vh] bg-sky-700'> 
+      <motion.div className='flex flex-row justify-end items-end w-[100%] h-[80vh] px-[14%] pb-[10vh] bg-background_light'> 
           <div className='flex flex-col justify-end w-[50%] h-[90%]'> 
-            <h1 className='font-afacad text-[9vw] font-bold text-start'>EvoluCode</h1>
-            <h1 className='font-afacad text-5xl font-bold w-[80%] text-sky-600 drop-shadow-[0_2.2px_2.2px_rgba(0,0,0,0.8)] -translate-y-10'>web solutions.</h1>
-            <h1 className='font-afacad text-5xl font-bold w-[100%] text-sky-600 drop-shadow-[0_2.2px_2.2px_rgba(0,0,0,0.8)]  whitespace-normal -translate-y-10'>anywhere.</h1>
-            <h1 className='font-afacad text-5xl font-bold w-[100%] text-sky-600 drop-shadow-[0_2.2px_2.2px_rgba(0,0,0,0.8)]  whitespace-normal -translate-y-10'>anytime.</h1>
+            <h1 className='font-afacad text-[9vw] font-bold text-start text-headline'>EvoluCode</h1>
+            <h1 className='font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] -translate-y-10'>web solutions.</h1>
+            <h1 className='font-afacad text-5xl font-bold w-[100%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)]  whitespace-normal -translate-y-10'>anywhere.</h1>
+            <h1 className='font-afacad text-5xl font-bold w-[100%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)]  whitespace-normal -translate-y-10'>anytime.</h1>
+            <button className=' w-[10vw] h-[6vh] mt-4 rounded-xl bg-secondary shadow-[0_6px_1px_2px_rgba(0,0,0,1)] font-afacad text-[1.5vw]'>Want more?</button>
           </div> 
           <div className='flex items-end w-[44%] h-[90%] ml-[6%]'>        
             {View}
@@ -37,9 +38,9 @@ function Main() {
       </motion.div>
       <SpringScreen 
         screenHeight_1={10}
-        screenHeight_2={70}
-        screenColor_2={"bg-amber-50"}
-        screenColor_1={"bg-sky-700"}>
+        screenHeight_2={50}
+        screenColor_2={"bg-secondary"}
+        screenColor_1={"bg-background_light"}>
           <h1 className='font-afacad text-[4vw] font-bold text-start px-[14vw] pt-[4vw]'>
           Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!
           </h1>
@@ -47,8 +48,8 @@ function Main() {
       <SpringScreen 
         screenHeight_1={10}
         screenHeight_2={90}
-        screenColor_2={"bg-sky-700"}
-        screenColor_1={"bg-amber-50"}>
+        screenColor_2={"bg-background_light"}
+        screenColor_1={"bg-secondary"}>
           <div className='flex flex-row justify-center pt-[20vh] pb-[20vh] gap-[2vw] px-[14vw]'>
             <Card 
             title="Web development"
@@ -67,13 +68,13 @@ function Main() {
           screenHeight_1={40}
           screenHeight_2={70}
           screenColor_2={"bg-amber-100"}
-          screenColor_1={"bg-sky-700"}>
+          screenColor_1={"bg-secondary"}>
           <h1 className='font-afacad height-[100vh] text-[2vw] font-bold text-start px-[14vw] py-[14vw]'>
           "Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!"
           </h1>      
           </SpringScreen> 
-      {scrollY <= 0 && <button className='absolute z-3 bottom-[8vh] left-[45%] w-[10vw] h-[6vh] mt-4 rounded-xl bg-amber-50 shadow-[0_6px_1px_2px_rgba(0,0,0,1)] font-afacad text-[1.5vw]'>Want more?</button>}
-      <Footer/>
+          <div className='w-[100%] h-[10%] px-[14%] bg-background_light'>      
+      <Footer/></div>
     </motion.main>
   );
 }

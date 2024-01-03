@@ -14,7 +14,7 @@ function EmptyPage() {
     const left = () => textControls.start("ascending")
   
   return (
-    <div className='w-[100%] h-[100%] bg-gradient-to-r from-amber-100 via-sky-200  to-sky-300'>
+    <div className='w-[100%] h-[100%] bg-gradient-to-r from-amber1 via-sky2  to-sky3'>
         <motion.h2 
         animate={textControls}
         variants={variants} 
