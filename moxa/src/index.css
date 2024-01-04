@@ -11,6 +11,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
+  scrollbar-width: "none";
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -31,7 +32,8 @@ code {
   outline: none;
   box-sizing: border-box;
   background: transparent;
-  font-family: inherit;
+  font-family: inherit; 
+  
 }
 a {
   text-decoration: none;

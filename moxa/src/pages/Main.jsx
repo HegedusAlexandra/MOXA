@@ -9,6 +9,7 @@ import compAnim from "../assets/compAnim.json";
 import SpringScreen from '../components/SpringScreen';
 import Card from '../components/Card';
 import { useScrollPosition, useScreenWidth } from '../hooks/position'
+import ListPoint from '../components/ListPoint';
 
 function Main() {
   const scrollY = useScrollPosition();
@@ -70,43 +71,22 @@ function Main() {
           screenColor_2={"bg-headline"}
           screenColor_1={"bg-headline"}>
             <div className='flex flex-col justify-center items-center w-[100%] h-[100%]'>
-              <h1 className='font-afacad w-[100%] h-[20%] text-[2vw] font-bold text-start px-[14vw] py-[4vw] text-highlight'>
+              <h1 className='font-afacad w-[100%] h-[20%] text-[3vw] font-bold text-start px-[14vw] pb-[10vw] pt-[4vw] text-highlight'>
               Initial Consultation and Development Strategy:
               </h1> 
               <div className='flex flex-row w-[100%] h-[80%]'>               
-                  <div className='w-[1vh] h-[80%] ml-[20vh] bg-background_light rounded-full'/>
-                  <div className='h-[92%] flex flex-col justify-between -translate-y-[5.4vh]'>
-                    <div className='h-[10vh] flex flex-row justify-between'>
-                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
-                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
-                      </div> 
-                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
-                    </div>                       
-                    <div className='h-[10vh] flex flex-row justify-between'>
-                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
-                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
-                      </div> 
-                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
-                    </div>                       
-                    <div className='h-[10vh] flex flex-row justify-between'>
-                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
-                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
-                      </div> 
-                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
-                    </div>                       
-                    <div className='h-[10vh] flex flex-row justify-between'>
-                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
-                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
-                      </div> 
-                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
-                    </div>                       
-                    <div className='h-[10vh] flex flex-row justify-between'>
-                      <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.4vh]'>
-                        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
-                      </div> 
-                      <div className='w-[90vh] h-[10vh] text-white font-montserrat mt-2 rounded-full'>Itt lesz a sz9veg</div>                      
-                    </div>                       
-                    
+                  <div className='w-[1vh] h-[80%] ml-[30vh] bg-background_light rounded-full'/>
+                  <div className='h-[94%] flex flex-col justify-between -translate-y-[5.4vh]'>
+                    <ListPoint 
+                    content={"Understanding Your Vision , Defining the Scope , Technical Planning"}/>   
+                    <ListPoint 
+                    content={"Crafting the Blueprint , Visual Aesthetics , Iterative Feedback"}/>   
+                    <ListPoint 
+                    content={"Bringing Designs to Life , Developing the Engine Room , Seamless Integration , Collaborative Development"}/>   
+                    <ListPoint 
+                    content={"Comprehensive Testing , User-Centric Evaluation ,Performance Optimization"}/>   
+                    <ListPoint 
+                    content={"Launching Your Vision , Continuous Improvement"}/>  
                   </div>        
               </div>
             </div>     
