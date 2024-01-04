@@ -1,4 +1,15 @@
 export const variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    hiddenList: { opacity: 0},
+    visibleList: { 
+      opacity: 1,  
+      transition: { duration: 0.5,ease: "easeIn" }
+    },
+    visibleCard: { 
+      opacity: 1, 
+      scale: 1, 
+      transition: { duration: 0.5 }
+    },
     initial:{
       width:'100%',
       position: 'absolute',

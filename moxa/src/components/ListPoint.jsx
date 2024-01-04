@@ -1,13 +1,37 @@
-import React,{memo} from 'react'
+import React,{memo, useState,useEffect} from 'react'
+import { motion,useAnimation } from "framer-motion"
+import colors from '../colors'
+import arrow from '../assets/icons_images/arrow.svg'
+import { variants } from './animations'
+import { useInView } from 'react-intersection-observer';
 
-function ListPoint({content}) {
+function ListPoint({content,index}) {
+  const controls = useAnimation();
+ const [ref, inView] = useInView(); 
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visibleCard');
+    }
+  }, [controls, inView]);
+
+  const[isHovered,setIsHovered] = useState(false)
   return (
-    <div className='h-[10vh] flex flex-row justify-between'>
-        <div className='flex justify-center items-center w-[10vh] h-[10vh] border-solid border-2 border-background rounded-full -translate-x-[5.5vh]'>
-        <div className='w-[2vh] h-[2vh] bg-highlight rounded-full'/>
+    <motion.div 
+      ref={ref}
+      initial="hiddenList"
+      animate={controls}
+      variants={variants} 
+     onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)} key={index} whileHover={{scale:1.2,mass:0.2,bounce: 0.4,damping: 300,stiffness: 50,velocity: 2,backgroundColor: colors.col_neon_green  }} className='h-[10.5vh] w-[70vw] flex flex-row justify-start rounded-full '>
+        <div className='flex justify-center items-center w-[5vw] h-[5vw] border-solid border-2 border-background rounded-full '>
+        <div className={`w-[2vh] h-[2vh] ${!isHovered && "bg-highlight text-black"} font-montserrat rounded-full text-[3vw] ${isHovered && "flex justify-center items-center"}`}>
+          {isHovered && index+1}
         </div> 
-        <div className='w-[90vh] h-[10vh] flex items-center text-white font-montserrat mt-2 rounded-full -translate-y-2'>{content}</div>                      
-    </div>
+        </div> 
+        <div className={`w-[60vw] h-[10vh] flex items-center justify-between font-montserrat mt-2 rounded-full -translate-y-2 pl-10 text-[1vw] ${isHovered ? "text-black" : "text-white "}`}>{content}
+        {isHovered && <img alt='arrow icon' src={arrow} className='w-12 h-12 -rotate-90'/>}
+        </div>                      
+    </motion.div>
   )
 }
 

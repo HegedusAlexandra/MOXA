@@ -1,6 +1,7 @@
 import React,{memo, useEffect} from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { variants } from './animations';
 
 const Card = ({ title, title_2, content }) => {
   const controls = useAnimation();
@@ -8,18 +9,10 @@ const Card = ({ title, title_2, content }) => {
 
  useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start('visibleCard');
     }
   }, [controls, inView]);
 
-  const variants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      transition: { duration: 0.5 }
-    }
-  };
 
   return (
     <motion.div

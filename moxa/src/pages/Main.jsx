@@ -22,6 +22,14 @@ function Main() {
 
   const { View } = useLottie(options);
 
+  const contentArr = [
+    "Understanding Your Vision , Defining the Scope , Technical Planning",
+    "Crafting the Blueprint , Visual Aesthetics , Iterative Feedback",
+    "Bringing Designs to Life , Developing the Engine Room , Seamless Integration , Collaborative Development",
+    "Comprehensive Testing , User-Centric Evaluation , Performance Optimization",
+    "Launching Your Vision , Continuous Improvement"
+  ]
+
   return (   
     <motion.main exit={{ opacity: 0 }} className="w-[100%] bg-secondary flex flex-col items-start ">    
       {(scrollY <= 0 && screenWidth > 720) ? <Menu screen={"home"}/> : <CircularMenu screen={"home"}/>}
@@ -75,18 +83,10 @@ function Main() {
               Initial Consultation and Development Strategy:
               </h1> 
               <div className='flex flex-row w-[100%] h-[80%]'>               
-                  <div className='w-[1vh] h-[80%] ml-[30vh] bg-background_light rounded-full'/>
-                  <div className='h-[94%] flex flex-col justify-between -translate-y-[5.4vh]'>
-                    <ListPoint 
-                    content={"Understanding Your Vision , Defining the Scope , Technical Planning"}/>   
-                    <ListPoint 
-                    content={"Crafting the Blueprint , Visual Aesthetics , Iterative Feedback"}/>   
-                    <ListPoint 
-                    content={"Bringing Designs to Life , Developing the Engine Room , Seamless Integration , Collaborative Development"}/>   
-                    <ListPoint 
-                    content={"Comprehensive Testing , User-Centric Evaluation ,Performance Optimization"}/>   
-                    <ListPoint 
-                    content={"Launching Your Vision , Continuous Improvement"}/>  
+                  <div className='w-[1vh] h-[80%] ml-[30vh] bg-background_light rounded-full translate-x-[2.7vw]'/>
+                  <div className='h-[94%] w-[100%] flex flex-col justify-between -translate-y-[5.4vh]'>
+                    {contentArr.map((el,index) => <ListPoint 
+                    content={el} index={index}/>)}                      
                   </div>        
               </div>
             </div>     

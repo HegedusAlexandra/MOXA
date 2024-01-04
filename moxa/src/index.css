@@ -195,12 +195,12 @@ select {
   border: 1px solid hsl(0, 100%, 100%);
   line-height: 3;
   opacity:0;
-  background-color: #0284C7;
+  background-color: #308C6A;
   transition: transform .3s ease, background .2s ease;
   padding:1
 }  
 .circular-menu .menu-item:hover {
-  background-color: #0369a1;
+  background-color: #52F2A8;
 }  
 .circular-menu.visible .menu-item {
   opacity:1;
