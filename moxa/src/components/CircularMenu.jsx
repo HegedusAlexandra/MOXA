@@ -22,12 +22,10 @@ const [isVisible,setIsVisible] = useState(false)
             borderRadius: "100%"
             }} 
             className='fixed z-1001 h-[8vh] w-[8vh]'>
-                <div className={isVisible ? 'absolute h-[10%] w-[70%]  mx-[5%] bg-background rounded-lg rotate-45' :  'h-[10%] w-[70%] my-[10%] mx-[5%] bg-background rounded-lg'}>
-                </div>
-                {!isVisible && <div className={screen === "contact" ? 'h-[10%] w-[90%] my-[20%] mx-[5%] bg-background rounded-lg' : 'h-[10%] w-[70%] my-[10%] mx-[5%] bg-background rounded-lg '}>
-                </div>}
-                <div className={isVisible ? 'absolute h-[10%] w-[70%]  mx-[5%] bg-background rounded-lg -rotate-45' : 'h-[10%] w-[70%] my-[10%] mx-[5%] bg-background rounded-lg'}>
-                </div>      
+                <div 
+                className={isVisible ? 'absolute h-[10%] w-[70%]  mx-[5%] bg-background rounded-lg rotate-45' :  'h-[10%] w-[70%] my-[10%] mx-[5%] bg-background rounded-lg'}/>
+                {!isVisible && <div className={screen === "contact" ? 'h-[10%] w-[90%] my-[20%] mx-[5%] bg-background rounded-lg' : 'h-[10%] w-[70%] my-[10%] mx-[5%] bg-background rounded-lg '}/>}
+                <div className={isVisible ? 'absolute h-[10%] w-[70%]  mx-[5%] bg-background rounded-lg -rotate-45' : 'h-[10%] w-[70%] my-[10%] mx-[5%] bg-background rounded-lg'}/>      
             </motion.button>
         </button>
         <menu className="items-wrapper">

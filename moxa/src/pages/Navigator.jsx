@@ -11,6 +11,7 @@ import { AnimatePresence } from "framer-motion";
 import { Helmet } from 'react-helmet';
 import Blog from './Blog';
 import logo from "../assets/icons_images/ec_logo.png"
+import Steps from './Steps';
 
 export default function Navigator() {
  const location = useLocation();
@@ -43,6 +44,9 @@ export default function Navigator() {
           </Route>               
           <Route path="/blog">
             <Blog />
+          </Route>               
+          <Route path="/steps/:slug">
+            <Steps />
           </Route>               
         </Switch>
       </AnimatePresence>

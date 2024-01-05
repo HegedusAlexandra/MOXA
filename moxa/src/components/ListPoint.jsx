@@ -1,13 +1,15 @@
 import React,{memo, useState,useEffect} from 'react'
 import { motion,useAnimation } from "framer-motion"
-import colors from '../colors'
+import colors from '../utils/colors'
 import arrow from '../assets/icons_images/arrow.svg'
 import { variants } from './animations'
 import { useInView } from 'react-intersection-observer';
+import { useHistory } from "react-router-dom";
 
 function ListPoint({content,index}) {
   const controls = useAnimation();
  const [ref, inView] = useInView(); 
+ let history = useHistory();
 
   useEffect(() => {
     if (inView) {
@@ -15,14 +17,19 @@ function ListPoint({content,index}) {
     }
   }, [controls, inView]);
 
+  const handleClick= (index) => {
+    history.push(`/steps/${index}`)
+  }
+
   const[isHovered,setIsHovered] = useState(false)
   return (
     <motion.div 
       ref={ref}
       initial="hiddenList"
       animate={controls}
-      variants={variants} 
-     onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)} key={index} whileHover={{scale:1.2,mass:0.2,bounce: 0.4,damping: 300,stiffness: 50,velocity: 2,backgroundColor: colors.col_neon_green  }} className='h-[10.5vh] w-[70vw] flex flex-row justify-start rounded-full '>
+      variants={variants}
+      onClick={() => handleClick(index+1)}
+      onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)} key={index} whileHover={{scale:1.2,mass:0.2,bounce: 0.4,damping: 300,stiffness: 50,velocity: 2,backgroundColor: colors.col_neon_green  }} className='h-[10.5vh] w-[70vw] flex flex-row justify-start rounded-full '>
         <div className='flex justify-center items-center w-[5vw] h-[5vw] border-solid border-2 border-background rounded-full '>
         <div className={`w-[2vh] h-[2vh] ${!isHovered && "bg-highlight text-black"} font-montserrat rounded-full text-[3vw] ${isHovered && "flex justify-center items-center"}`}>
           {isHovered && index+1}

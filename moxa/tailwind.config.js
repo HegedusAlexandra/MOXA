@@ -18,6 +18,7 @@ module.exports = {
       "sky2":"#bae6fd",
       "sky3":"#7dd3fc",
       "white_op": "rgba(255, 255, 255, 0.15)",
+      "white_op2": "rgba(255, 255, 255, 0.65)",
       /*I. "background":"#7BA6A1",
       "background_light":"#7BA691",
       "secondary": "#F2B705",

@@ -10,6 +10,7 @@ import SpringScreen from '../components/SpringScreen';
 import Card from '../components/Card';
 import { useScrollPosition, useScreenWidth } from '../hooks/position'
 import ListPoint from '../components/ListPoint';
+import contentArr from '../utils/constants';
 
 function Main() {
   const scrollY = useScrollPosition();
@@ -21,14 +22,6 @@ function Main() {
   };
 
   const { View } = useLottie(options);
-
-  const contentArr = [
-    "Understanding Your Vision , Defining the Scope , Technical Planning",
-    "Crafting the Blueprint , Visual Aesthetics , Iterative Feedback",
-    "Bringing Designs to Life , Developing the Engine Room , Seamless Integration , Collaborative Development",
-    "Comprehensive Testing , User-Centric Evaluation , Performance Optimization",
-    "Launching Your Vision , Continuous Improvement"
-  ]
 
   return (   
     <motion.main exit={{ opacity: 0 }} className="w-[100%] bg-secondary flex flex-col items-start ">    
@@ -85,8 +78,10 @@ function Main() {
               <div className='flex flex-row w-[100%] h-[80%]'>               
                   <div className='w-[1vh] h-[80%] ml-[30vh] bg-background_light rounded-full translate-x-[2.7vw]'/>
                   <div className='h-[94%] w-[100%] flex flex-col justify-between -translate-y-[5.4vh]'>
-                    {contentArr.map((el,index) => <ListPoint 
-                    content={el} index={index}/>)}                      
+                    {contentArr.map((el,index) => 
+                    <ListPoint 
+                    content={el} index={index}/>
+                    )}                      
                   </div>        
               </div>
             </div>     

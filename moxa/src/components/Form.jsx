@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { motion } from "framer-motion";
-import colors from '../colors'
+import colors from '../utils/colors'
 
 const Form = () => {
   // Define a Yup schema with stricter checks

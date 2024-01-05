@@ -1,6 +1,6 @@
 import React, {memo} from 'react'
 import {Link} from 'react-router-dom'
-import colors from '../colors'
+import colors from '../utils/colors'
 import moxa_logo from '../assets/icons_images/ec_logo.png'
 import arrow from '../assets/icons_images/arrow.svg'
 import {  motion } from "framer-motion";
