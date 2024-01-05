@@ -30,7 +30,7 @@ function ListPoint({content,index}) {
       variants={variants}
       onClick={() => handleClick(index+1)}
       onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)} key={index} whileHover={{scale:1.2,mass:0.2,bounce: 0.4,damping: 300,stiffness: 50,velocity: 2,backgroundColor: colors.col_neon_green  }} className='h-[10.5vh] w-[70vw] flex flex-row justify-start rounded-full '>
-        <div className='flex justify-center items-center w-[5vw] h-[5vw] border-solid border-2 border-background rounded-full '>
+        <div className='flex justify-center items-center w-[10.5vh] h-[10.5vh] border-solid border-2 border-background rounded-full '>
         <div className={`w-[2vh] h-[2vh] ${!isHovered && "bg-highlight text-black"} font-montserrat rounded-full text-[3vw] ${isHovered && "flex justify-center items-center"}`}>
           {isHovered && index+1}
         </div> 
