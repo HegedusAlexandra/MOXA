@@ -2,9 +2,8 @@ import React,{useCallback} from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import '../input.css';
-import { AnimatePresence, motion, usePresence } from "framer-motion";
-import colors from '../colors'
+import { motion } from "framer-motion";
+import colors from '../utils/colors'
 
 const Form = () => {
   // Define a Yup schema with stricter checks
@@ -55,13 +54,13 @@ const Form = () => {
 
   return (
     <form className="w-[100%] h-[100%]" onSubmit={handleSubmit(onSubmit)}>
-      <div className="w-[100%] h-[100%] p-4 flex flex-col">
-        <div className="flex flex-row mb-4">
+      <div className="w-[100%] h-[100%] py-4 pl-4 flex flex-col">
+        <div className="flex flex-row mb-4 w-[100%] h-[20%]">
           {simpleInput('name', 'text', 'Name')}
           {simpleInput('email', 'email', 'Email')}
           {simpleInput('telephone', 'tel', 'Telephone')}
         </div>
-        <div className="flex flex-row mb-4">
+        <div className="flex flex-row mb-4 w-[100%] h-[60%]">
           <Controller
             name="message"
             control={control}
@@ -82,11 +81,11 @@ const Form = () => {
             )}
           />
         </div>
-        <div>
-          <motion.button whileHover={{ scale:1.1, color:colors.cyan_50}} type="submit" className="w-[30%] h-[10%] p-2 rounded-xl bg-cyan-950 border-4 border-solid border-cyan-950 font-montserrat text-cyan-100" onClick={() => onSubmit('call')}>
+        <div className="flex flex-row justify-end mb-4 w-[100%] h-[20%]">
+          <motion.button whileHover={{ scale:1.1, color:colors.cyan_50}} type="submit" className="w-[30%] h-[100%] p-2 rounded-xl border-4 border-solid border-headline font-montserrat text-text" onClick={() => onSubmit('call')}>
             I want a call
           </motion.button>
-          <motion.button whileHover={{ scale: 1.1 }} type="submit" className="w-[30%] h-[10%] p-2 rounded-xl border-4 border-solid border-cyan-950 ml-6 font-montserrat text-cyan-950 font-bold" onClick={() => onSubmit('email')}>
+          <motion.button whileHover={{ scale: 1.1 }} type="submit" className="w-[30%] h-[100%] p-2 rounded-xl border-4 border-solid border-highlight ml-6 font-montserrat text-text font-bold" onClick={() => onSubmit('email')}>
             I want an email
           </motion.button>
         </div>
