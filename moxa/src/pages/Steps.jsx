@@ -16,12 +16,11 @@ function Steps() {
       console.log('Index:', index);
       if (!isNaN(index) && stepRefs.current[index]) {
           const element = stepRefs.current[index];
-          console.log('Scrolling to:', element);
           setTimeout(() => {
               // Get the bounding rectangle of the target element
               const boundingRect = element.getBoundingClientRect();
               // Calculate the desired scroll position (30vh above the element)
-              const scrollPosition = window.scrollY + boundingRect.top - window.innerHeight * 0.2;
+              const scrollPosition = window.scrollY + boundingRect.top - window.innerHeight * 0.02;
               // Scroll to the calculated position
               window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
           }, 500);

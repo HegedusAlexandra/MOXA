@@ -139,6 +139,13 @@ select {
   transform: translate(-40%,-40%);
 }
 
+@media only screen and (max-width: 720px) {
+  .circular-menu .main-btn {
+   background-color: transparent;
+   box-shadow: 4px 4px 6px 0 hsla(0, 0%, 0%, 0.0);
+  }
+}
+
 .circular-menu.visible .main-btn {
   box-shadow: inset -4px -4px 8px hsla(0, 0%, 0%, .4);
 }
@@ -349,3 +356,4 @@ canvas {
 .form__field .form__field_long:required, .form__field .form__field_long:invalid {
   box-shadow: none;
 }
+

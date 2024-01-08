@@ -24,35 +24,41 @@ function Main() {
   const { View } = useLottie(options);
 
   return (   
-    <motion.main exit={{ opacity: 0 }} className="w-[100%] bg-secondary flex flex-col items-start ">    
+    <motion.main exit={{ opacity: 0 }} className="w-[100%] bg-secondary flex flex-col items-start overflow-x-hidden">    
       {(scrollY <= 0 && screenWidth > 720) ? <Menu screen={"home"}/> : <CircularMenu screen={"home"}/>}
-      <motion.div className='flex flex-row justify-end items-end w-[100%] h-[80vh] px-[14%] pb-[10vh] bg-background_light'> 
-          <div className='flex flex-col justify-end w-[50%] h-[90%]'> 
-            <h1 className='font-afacad text-[9vw] font-bold text-start text-headline'>EvoluCode</h1>
-            <h1 className='font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] -translate-y-10'>web solutions.</h1>
-            <h1 className='font-afacad text-5xl font-bold w-[100%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)]  whitespace-normal -translate-y-10'>anywhere.</h1>
-            <h1 className='font-afacad text-5xl font-bold w-[100%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)]  whitespace-normal -translate-y-10'>anytime.</h1>
-            <button className=' w-[10vw] h-[6vh] mt-4 rounded-xl bg-secondary shadow-[0_6px_1px_2px_rgba(0,0,0,1)] font-afacad text-[1.5vw]'>Want more?</button>
+      <motion.div 
+      className={`flex w-[100%]  bg-background_light ${screenWidth < 720 ? "flex-col pt-[14vh] h-[90vh] px-[6%]" : "flex-row pb-[10vh] justify-end items-end h-[80vh] px-[14%]"}`}> 
+          <div className={`flex flex-col justify-end ${screenWidth < 720 ? "h-[30vh] w-[100%] mt-[4vh]" : "h-[90%] w-[50%]"}`}> 
+            <h1 className={`font-afacad font-bold text-start text-headline ${screenWidth < 720 ? "text-[10vh] mt-[10vh]" :"text-9xl"} mb-[4vh]`}>EvoluCode</h1>
+            <h1 className={`font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] ${screenWidth < 720 ? "text-2xl" :"text-5xl -translate-y-10"}`}>web solutions.</h1>
+            <h1 className={`font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] ${screenWidth < 720 ? "text-2xl" :"text-5xl -translate-y-10"}`}>anywhere.</h1>
+            <h1 className={`font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] ${screenWidth < 720 ? "text-2xl" :"text-5xl -translate-y-10"}`}>anytime.</h1>
+           {screenWidth > 720 && <button className=' w-[10vw] h-[6vh] mt-4 rounded-xl bg-secondary shadow-[0_6px_1px_2px_rgba(0,0,0,1)] font-afacad text-[1.5vw]'>Want more?</button>}
           </div> 
-          <div className='flex items-end w-[44%] h-[90%] ml-[6%]'>        
+          <div className={`flex  ${screenWidth < 720 ? "h-[30vh] w-[100%] items-start pt-[2vh]" : "h-[90%] w-[44%] ml-[6%] items-end"}`}>        
             {View}
           </div>     
+          {screenWidth < 720 && <button className=' w-[40vw] h-[4vh] mt-4 rounded-xl bg-secondary shadow-[0_1px_1px_2px_rgba(0,0,0,1)] mb-[2vh] font-afacad text-[4vw]'>Want more?</button>}
       </motion.div>
-      <SpringScreen 
+      {screenWidth > 720 ? <SpringScreen 
         screenHeight_1={10}
         screenHeight_2={50}
         screenColor_2={"bg-secondary"}
         screenColor_1={"bg-background_light"}>
-          <h1 className='font-afacad text-[4vw] font-bold text-start px-[14vw] pt-[4vw]'>
+          <h1 className={`font-afacad text-[4vw] font-bold text-start px-[14%] pt-[4vw]`}>
           Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!
           </h1>
-      </SpringScreen>
+      </SpringScreen> : <div className={`w-[100%] h-[60vh] px-[${screenWidth < 720 ? 6 :14}%] pt-[10vh] bg-secondary border-t-4  border-solid border-black flex justify-center items-center`}>
+        <h1 className='font-afacad text-5xl font-bold text-start'>
+          Explore the New Dimensions of Digital Presence with Our Cutting-Edge Website Features!
+          </h1>
+          </div>}
       <SpringScreen 
         screenHeight_1={10}
-        screenHeight_2={90}
+        screenHeight_2={screenWidth > 720 && 90}
         screenColor_2={"bg-background_light"}
         screenColor_1={"bg-secondary"}>
-          <div className='flex flex-row justify-center pt-[20vh] pb-[20vh] gap-[2vw] px-[14vw]'>
+          <div className={`flex justify-center  gap-[2vw] px-[${screenWidth < 720 ? 6 :14}%] ${screenWidth < 720 ? "flex-col pt-[6vh] pb-[6vh]" : "flex-row pt-[20vh] pb-[20vh]"}`}>
             <Card 
             title="Web development"
             title_2="Innovative and Comprehensive Solutions"  
@@ -72,12 +78,12 @@ function Main() {
           screenColor_2={"bg-headline"}
           screenColor_1={"bg-headline"}>
             <div className='flex flex-col justify-center items-center w-[100%] h-[100%]'>
-              <h1 className='font-afacad w-[100%] h-[20%] text-[3vw] font-bold text-start px-[14vw] pb-[10vw] pt-[4vw] text-highlight'>
+              <h1 className={`font-afacad w-[100%] h-[20%] ${screenWidth < 720 ? "text-3xl": "text-md"} font-bold text-start px-[14vw] pb-[10vw] pt-[4vw] text-highlight`}>
               Initial Consultation and Development Strategy:
               </h1> 
-              <div className='flex flex-row w-[100%] h-[80%]'>               
-                  <div className='w-[1vh] h-[80%] ml-[30vh] bg-background_light rounded-full translate-x-[2.7vw]'/>
-                  <div className='h-[94%] w-[100%] flex flex-col justify-between -translate-y-[5.4vh]'>
+              <div className={`flex flex-row w-[100%] h-[80%]`}>               
+                  <div className={`w-[1vh] h-[80%] bg-background_light rounded-full translate-x-[2.7vw] ${screenWidth < 720 ? "ml-[14%]" : "ml-[30vh]"}`}/>
+                  <div className={` w-[100%] flex flex-col justify-between  ${screenWidth < 720 ? "h-[88%] -translate-y-[3vh] -translate-x-[3.6vw]" : "h-[94%] -translate-y-[5.4vh]"}`}>
                     {contentArr.map((el,index) => 
                     <ListPoint 
                     content={el} index={index}/>
