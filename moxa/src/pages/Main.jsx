@@ -27,12 +27,12 @@ function Main() {
     <motion.main exit={{ opacity: 0 }} className="w-[100%] bg-secondary flex flex-col items-start overflow-x-hidden">    
       {(scrollY <= 0 && screenWidth > 720) ? <Menu screen={"home"}/> : <CircularMenu screen={"home"}/>}
       <motion.div 
-      className={`flex w-[100%]  bg-background_light ${screenWidth < 720 ? "flex-col pt-[14vh] h-[90vh] px-[6%]" : "flex-row pb-[10vh] justify-end items-end h-[80vh] px-[14%]"}`}> 
+      className={`flex w-[100%]  bg-background_light ${screenWidth < 720 ? "flex-col pt-[16vh] h-[90vh] px-[6%]" : "flex-row pb-[10vh] justify-end items-end h-[80vh] px-[14%]"}`}> 
           <div className={`flex flex-col justify-end ${screenWidth < 720 ? "h-[30vh] w-[100%] mt-[4vh]" : "h-[90%] w-[50%]"}`}> 
-            <h1 className={`font-afacad font-bold text-start text-headline ${screenWidth < 720 ? "text-[10vh] mt-[10vh]" :"text-9xl"} mb-[4vh]`}>EvoluCode</h1>
-            <h1 className={`font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] ${screenWidth < 720 ? "text-2xl" :"text-5xl -translate-y-10"}`}>web solutions.</h1>
-            <h1 className={`font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] ${screenWidth < 720 ? "text-2xl" :"text-5xl -translate-y-10"}`}>anywhere.</h1>
-            <h1 className={`font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] ${screenWidth < 720 ? "text-2xl" :"text-5xl -translate-y-10"}`}>anytime.</h1>
+            <h1 className={`font-afacad font-bold text-start text-headline ${screenWidth < 720 ? "text-[10vh] mt-[10vh]" :"text-[18vh]"} mb-[4vh]`}>EvoluCode</h1>
+            <h1 className={`font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] ${screenWidth < 720 ? "text-[6vh]" :"text-5xl -translate-y-10"}`}>web solutions.</h1>
+            <h1 className={`font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] ${screenWidth < 720 ? "text-[6vh]" :"text-5xl -translate-y-10"}`}>anywhere.</h1>
+            <h1 className={`font-afacad text-5xl font-bold w-[80%] text-highlight drop-shadow-[2px_2px_1px_rgba(0,0,0,0.8)] ${screenWidth < 720 ? "text-[6vh]" :"text-5xl -translate-y-10"}`}>anytime.</h1>
            {screenWidth > 720 && <button className=' w-[10vw] h-[6vh] mt-4 rounded-xl bg-secondary shadow-[0_6px_1px_2px_rgba(0,0,0,1)] font-afacad text-[1.5vw]'>Want more?</button>}
           </div> 
           <div className={`flex  ${screenWidth < 720 ? "h-[30vh] w-[100%] items-start pt-[2vh]" : "h-[90%] w-[44%] ml-[6%] items-end"}`}>        
@@ -78,10 +78,10 @@ function Main() {
           screenColor_2={"bg-headline"}
           screenColor_1={"bg-headline"}>
             <div className='flex flex-col justify-center items-center w-[100%] h-[100%]'>
-              <h1 className={`font-afacad w-[100%] h-[20%] ${screenWidth < 720 ? "text-3xl": "text-md"} font-bold text-start px-[14vw] pb-[10vw] pt-[4vw] text-highlight`}>
+              <h1 className={`font-afacad w-[100%] h-[20%] ${screenWidth < 720 ? "text-3xl": "text-7xl"} font-bold text-start px-[14vw] pb-[10vw] pt-[4vw] text-highlight`}>
               Initial Consultation and Development Strategy:
               </h1> 
-              <div className={`flex flex-row w-[100%] h-[80%]`}>               
+              <div className={`flex flex-row w-[100%] ${screenWidth < 720 ? "h-[80%] mt-[10%]" :" h-[94%]"}`}>               
                   <div className={`w-[1vh] h-[80%] bg-background_light rounded-full translate-x-[2.7vw] ${screenWidth < 720 ? "ml-[14%]" : "ml-[30vh]"}`}/>
                   <div className={` w-[100%] flex flex-col justify-between  ${screenWidth < 720 ? "h-[88%] -translate-y-[3vh] -translate-x-[3.6vw]" : "h-[94%] -translate-y-[5.4vh]"}`}>
                     {contentArr.map((el,index) => 
@@ -92,7 +92,7 @@ function Main() {
               </div>
             </div>     
           </SpringScreen> 
-          <div className='w-[100%] h-[30%] px-[14%] bg-background_light'>      
+          <div className={`w-[100%] h-[30%] px-[${screenWidth < 720 ? 6 : 14}%] bg-background_light`}>      
             <Footer/>
           </div>
     </motion.main>

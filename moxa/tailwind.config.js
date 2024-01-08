@@ -11,6 +11,7 @@ module.exports = {
         'hand-pattern': "url('./assets/icons_images/mobile_color.jpg')",
         'computer': "url('./assets/icons_images/laptop_color.jpg')",
         'desert': "url('./assets/icons_images/desert.png')",
+        'desert_mobile': "url('./assets/icons_images/desert_mobile.png')",
       }
     },
     colors: {    

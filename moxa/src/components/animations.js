@@ -14,7 +14,7 @@ export const variants = {
       width:'100%',
       position: 'absolute',
       zIndex: 0,
-      top: '50%',
+      top: '100%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
       fontSize: '8vw',

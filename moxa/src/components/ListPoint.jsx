@@ -37,8 +37,8 @@ function ListPoint({content,index}) {
           {isHovered && index+1}
         </div> 
         </div> 
-        <div className={`w-[60vw] h-[${screenWidth < 720 ? "5.5" : "10"}vh] flex items-center font-montserrat mt-2 rounded-full -translate-y-2 pl-10 ${screenWidth < 720 ? "text-xs flex-col" : "text-[1vw]"} ${isHovered ? "text-black" : "text-white "}`}>
-          {content.headlines.map((el) => <p className='mr-[2vh]'>{el}</p>)}
+        <div className={`w-[60vw] items-center justify-between ${screenWidth < 720 ? "h-[5.5] text-[3vw] pt-[1vh] " : " h-[10] pl-10 text-[1vw]"} flex  font-montserrat mt-2 rounded-full -translate-y-2  ${(isHovered && screenWidth <720) ? "text-black text-[2vw]" : (isHovered && screenWidth <720) ? "text-black text-[1vw]" :"text-white "}`}>
+         <div className={`flex ${screenWidth < 720 ? "flex-col" : "flex-row"}`}>{content.headlines.map((el) => <p className='ml-[2vh]'>{el}</p>)}</div>
         {isHovered && <img alt='arrow icon' src={arrow} className='w-12 h-12 -rotate-90'/>}
         </div>                      
     </motion.div>
